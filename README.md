@@ -16,3 +16,7 @@ fn main() {
     println!("{shell}"); // -> "zsh"
 }
 ```
+
+## Credits
+
+This implementation is very much inspired and influenced by the shell infer implementation in [Schniz/fnm](https://github.com/Schniz/fnm) (see [fnm/src/shell](https://github.com/Schniz/fnm/tree/master/src/shell)).
