@@ -48,4 +48,4 @@ jobs:
           toolchain: stable
       - name: Unit Tests
         run: ACTUAL_SHELL="${{ matrix.shell }}" cargo test
-        shell: ${{ matrix.shell }}
+        shell: "${{ matrix.shell }}"
