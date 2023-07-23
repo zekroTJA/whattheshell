@@ -5,7 +5,6 @@ use crate::{
     errors::{Error, Result},
     shell::Shell,
 };
-use std::ffi::OsStr;
 use sysinfo::{ProcessExt, System, SystemExt};
 
 impl Infer {
