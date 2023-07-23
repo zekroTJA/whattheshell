@@ -63,12 +63,12 @@ jobs:
           profile: minimal
           toolchain: stable
       - name: Test (PowerShell)
-        run: cargo test
+        run: cargo test --lib
         shell: powershell
         env:
           ACTUAL_SHELL: powershell
       - name: Test (CMD)
-        run: cargo test
+        run: cargo test --lib
         shell: cmd
         env:
           ACTUAL_SHELL: cmd
