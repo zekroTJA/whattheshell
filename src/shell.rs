@@ -2,11 +2,19 @@ use crate::{
     errors::{Error, Result},
     infer::Infer,
 };
+use core::fmt;
 use std::str::FromStr;
 
 impl Shell {
     /// Tries to infer the shell in which the program is currently
     /// running in from the environment.
+    ///
+    /// ## Example
+    /// ```
+    /// # use whattheshell::Shell;
+    /// let shell = Shell::infer().unwrap();
+    /// dbg!(shell);
+    /// ```
     pub fn infer() -> Result<Self> {
         Infer::infer()
     }
@@ -36,11 +44,11 @@ macro_rules! define_shells {
             }
         }
 
-        impl ToString for Shell {
-            fn to_string(&self) -> String {
+        impl fmt::Display for Shell {
+            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
                 match self {
                     $(
-                        Self::$shell => $name.to_string(),
+                        Self::$shell => write!(f, $name),
                     )*
                 }
             }
