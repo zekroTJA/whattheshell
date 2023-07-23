@@ -21,14 +21,15 @@ jobs:
           profile: minimal
           toolchain: stable
       - name: Test (SH)
-        run: ACTUAL_SHELL="sh" cargo test
+        run: cargo test
         shell: sh
+        env:
+          ACTUAL_SHELL: sh
       - name: Test (BASH)
-        run: ACTUAL_SHELL="bash" cargo test
+        run: cargo test
         shell: bash
-      - name: Test (ZSH)
-        run: ACTUAL_SHELL="zsh" cargo test
-        shell: zsh
+        env:
+          ACTUAL_SHELL: bash
   tests-macos:
     name: Unit Tests (MacOS)
     runs-on: macos-latest
@@ -41,14 +42,15 @@ jobs:
           profile: minimal
           toolchain: stable
       - name: Test (SH)
-        run: ACTUAL_SHELL="sh" cargo test
+        run: cargo test
         shell: sh
+        env:
+          ACTUAL_SHELL: sh
       - name: Test (BASH)
-        run: ACTUAL_SHELL="bash" cargo test
+        run: cargo test
         shell: bash
-      - name: Test (ZSH)
-        run: ACTUAL_SHELL="zsh" cargo test
-        shell: zsh
+        env:
+          ACTUAL_SHELL: bash
   tests-windows:
     name: Unit Tests (Windows)
     runs-on: windows-latest
@@ -61,8 +63,12 @@ jobs:
           profile: minimal
           toolchain: stable
       - name: Test (PowerShell)
-        run: ACTUAL_SHELL="powershell" cargo test
+        run: cargo test
         shell: powershell
+        env:
+          ACTUAL_SHELL: powershell
       - name: Test (CMD)
-        run: ACTUAL_SHELL="cmd" cargo test
+        run: cargo test
         shell: cmd
+        env:
+          ACTUAL_SHELL: cmd
