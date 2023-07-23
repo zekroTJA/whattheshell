@@ -1,0 +1,51 @@
+name: Unit Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "*"
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  unit-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Ubuntu
+          - os: "ubuntu-latest"
+            shell: "sh"
+          - os: "ubuntu-latest"
+            shell: "bash"
+          - os: "ubuntu-latest"
+            shell: "zsh"
+
+          # MacOS
+          - os: "macos-latest"
+            shell: "sh"
+          - os: "macos-latest"
+            shell: "bash"
+          - os: "macos-latest"
+            shell: "zsh"
+
+          # Windows
+          - os: "windows-latest"
+            shell: "powershell"
+          - os: "windows-latest"
+            shell: "cmd"
+
+    name: Unit Tests
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@master
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+      - name: Unit Tests
+        run: ACTUAL_SHELL="${{ matrix.shell }}" cargo test
+        shell: ${{ matrix.shell }}
