@@ -6,9 +6,8 @@ readme = "README.md"
 homepage = "https://github.com/zekrotja/whattheshell"
 repository = "https://github.com/zekrotja/whattheshell"
 license = "MIT"
-license-file = "LICENSE"
 documentation = "https://docs.rs/whattheshell"
-keywords = ["shell", "infer shell", "cli"]
+keywords = ["shell", "infer-shell", "cli"]
 version = "1.0.0"
 edition = "2021"
 
