@@ -1,0 +1,21 @@
+[package]
+name = "whattheshell"
+description = "Infer the current shell the application is running on"
+authors = ["Ringo Hoffmann <contact@zekro.de>"]
+readme = "README.md"
+homepage = "https://github.com/zekrotja/whattheshell"
+repository = "https://github.com/zekrotja/whattheshell"
+license = "MIT"
+license-file = "LICENSE"
+documentation = "https://docs.rs/whattheshell"
+keywords = ["shell", "infer shell", "cli"]
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1.0.44"
+
+[target.'cfg(not(uniex))'.dependencies]
+sysinfo = "0.29.6"
