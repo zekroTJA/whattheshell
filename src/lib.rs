@@ -1,3 +1,5 @@
+mod infer;
+mod shell;
+
 pub mod errors;
-pub mod infer;
-pub mod shell;
+pub use shell::Shell;

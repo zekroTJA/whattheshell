@@ -5,6 +5,8 @@ use crate::{
 use std::str::FromStr;
 
 impl Shell {
+    /// Tries to infer the shell in which the program is currently
+    /// running in from the environment.
     pub fn infer() -> Result<Self> {
         Infer::infer()
     }
@@ -12,6 +14,8 @@ impl Shell {
 
 macro_rules! define_shells {
     ($( $name:literal $(| $alias:literal ),* => $shell:tt ),*) => {
+        /// Shell declares a type of shell and allows to
+        /// infer the type of shell.
         #[derive(Debug)]
         pub enum Shell {
             $(
@@ -55,9 +59,8 @@ define_shells!(
 
 #[cfg(test)]
 mod test {
-    use std::env;
-
     use super::*;
+    use std::env;
 
     #[test]
     fn integrate() {

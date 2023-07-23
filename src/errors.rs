@@ -17,6 +17,7 @@ pub enum Error {
     FailedGettingPid(&'static str),
 }
 
+/// Contains information about a failed process info collection.
 #[derive(thiserror::Error, Debug)]
 pub enum ProcessInfoError {
     #[error("command error: {0}")]
