@@ -24,7 +24,7 @@ macro_rules! define_shells {
     ($( $name:literal $(| $alias:literal ),* => $shell:tt ),*) => {
         /// Shell declares a type of shell and allows to
         /// infer the type of shell.
-        #[derive(Debug)]
+        #[derive(Clone, Debug)]
         pub enum Shell {
             $(
                 $shell,
