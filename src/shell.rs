@@ -61,6 +61,7 @@ define_shells!(
     "bash" => Bash,
     "zsh" =>  Zsh,
     "fish" =>  Fish,
+    "nu" => Nushell,
     "powershell" | "pwsh" => PowerShell,
     "cmd" => Cmd
 );
