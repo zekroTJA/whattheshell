@@ -17,6 +17,20 @@ fn main() {
 }
 ```
 
+## Supported shells
+
+Here you can find a list of currently supported shells.
+
+- Shell (`sh`)
+- Bash (`bash`)
+- Z shell (`zsh`)
+- Fish (`fish`)
+- Nushell (`nu`)
+- PowerShell (`powershell`, `pwsh`)
+- Cmd (`cmd`)
+
+Are you missing a shell? Feel free to [create an issue](https://github.com/zekroTJA/whattheshell/issues/new) or create a pull request with an implementation.
+
 ## Credits
 
 This implementation is very much inspired and influenced by the shell infer implementation in [Schniz/fnm](https://github.com/Schniz/fnm) (see [fnm/src/shell](https://github.com/Schniz/fnm/tree/master/src/shell)).
